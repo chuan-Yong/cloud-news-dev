@@ -1,0 +1,22 @@
+2021-05-13 23:23:50.026 INFO  com.cloud.user.Application Line:55  - Starting Application on DESKTOP-510LF0A with PID 13084 (F:\ideaProject\cloud-news-dev\news-dev-services-user\target\classes started by 99141 in F:\ideaProject\cloud-news-dev)
+2021-05-13 23:23:50.029 INFO  com.cloud.user.Application Line:655 - The following profiles are active: dev
+2021-05-13 23:23:50.074 WARN  org.springframework.http.converter.json.Jackson2ObjectMapperBuilder Line:127 - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2021-05-13 23:23:51.305 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:249 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-13 23:23:51.308 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:127 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-13 23:23:51.347 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:187 - Finished Spring Data repository scanning in 17ms. Found 0 Redis repository interfaces.
+2021-05-13 23:23:51.955 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:92  - Tomcat initialized with port(s): 8003 (http)
+2021-05-13 23:23:51.967 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8003"]
+2021-05-13 23:23:51.967 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-05-13 23:23:51.967 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-05-13 23:23:52.124 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-05-13 23:23:52.124 INFO  org.springframework.web.context.ContextLoader Line:284 - Root WebApplicationContext: initialization completed in 2038 ms
+2021-05-13 23:23:53.858 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-13 23:23:54.073 INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:84  - Context refreshed
+2021-05-13 23:23:54.105 INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:87  - Found 1 custom documentation plugin(s)
+2021-05-13 23:23:54.123 INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner Line:44  - Scanning for api listing references
+2021-05-13 23:24:16.329 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8003"]
+2021-05-13 23:24:16.365 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:204 - Tomcat started on port(s): 8003 (http) with context path ''
+2021-05-13 23:24:16.371 INFO  com.cloud.user.Application Line:61  - Started Application in 27.186 seconds (JVM running for 31.623)
+2021-05-13 23:27:27.570 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-13 23:27:27.573 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-05-13 23:27:27.618 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 45 ms

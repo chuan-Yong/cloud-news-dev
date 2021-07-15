@@ -1,0 +1,170 @@
+2021-03-21 22:51:10.049 INFO  com.cloud.user.Application Line:55  - Starting Application on DESKTOP-510LF0A with PID 29400 (F:\ideaProject\cloud-news-dev\news-dev-services-user\target\classes started by 99141 in F:\ideaProject\cloud-news-dev)
+2021-03-21 22:51:10.052 INFO  com.cloud.user.Application Line:655 - The following profiles are active: dev
+2021-03-21 22:51:10.093 WARN  org.springframework.http.converter.json.Jackson2ObjectMapperBuilder Line:127 - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2021-03-21 22:51:11.060 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:249 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-21 22:51:11.063 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:127 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-21 22:51:11.088 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:187 - Finished Spring Data repository scanning in 12ms. Found 0 Redis repository interfaces.
+2021-03-21 22:51:11.552 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:92  - Tomcat initialized with port(s): 8003 (http)
+2021-03-21 22:51:11.561 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8003"]
+2021-03-21 22:51:11.562 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-03-21 22:51:11.562 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-03-21 22:51:11.704 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-03-21 22:51:11.704 INFO  org.springframework.web.context.ContextLoader Line:284 - Root WebApplicationContext: initialization completed in 1572 ms
+2021-03-21 22:51:11.762 WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext Line:558 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'helloController': Unsatisfied dependency expressed through field 'redisOperator'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.cloud.utils.RedisOperator' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2021-03-21 22:51:11.765 INFO  org.apache.catalina.core.StandardService Line:173 - Stopping service [Tomcat]
+2021-03-21 22:51:11.777 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener Line:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-03-21 22:51:11.884 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter Line:40  - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field redisOperator in com.cloud.user.controller.HelloController required a bean of type 'com.cloud.utils.RedisOperator' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.cloud.utils.RedisOperator' in your configuration.
+
+2021-03-21 22:52:10.857 INFO  com.cloud.user.Application Line:55  - Starting Application on DESKTOP-510LF0A with PID 37800 (F:\ideaProject\cloud-news-dev\news-dev-services-user\target\classes started by 99141 in F:\ideaProject\cloud-news-dev)
+2021-03-21 22:52:10.859 INFO  com.cloud.user.Application Line:655 - The following profiles are active: dev
+2021-03-21 22:52:10.943 WARN  org.springframework.http.converter.json.Jackson2ObjectMapperBuilder Line:127 - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2021-03-21 22:52:11.864 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:249 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-21 22:52:11.866 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:127 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-21 22:52:11.890 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:187 - Finished Spring Data repository scanning in 13ms. Found 0 Redis repository interfaces.
+2021-03-21 22:52:12.389 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:92  - Tomcat initialized with port(s): 8003 (http)
+2021-03-21 22:52:12.400 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8003"]
+2021-03-21 22:52:12.401 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-03-21 22:52:12.401 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-03-21 22:52:12.552 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-03-21 22:52:12.553 INFO  org.springframework.web.context.ContextLoader Line:284 - Root WebApplicationContext: initialization completed in 1577 ms
+2021-03-21 22:52:12.614 WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext Line:558 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'helloController': Unsatisfied dependency expressed through field 'redisOperator'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.cloud.utils.RedisOperator' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2021-03-21 22:52:12.616 INFO  org.apache.catalina.core.StandardService Line:173 - Stopping service [Tomcat]
+2021-03-21 22:52:12.626 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener Line:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-03-21 22:52:12.733 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter Line:40  - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field redisOperator in com.cloud.user.controller.HelloController required a bean of type 'com.cloud.utils.RedisOperator' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.cloud.utils.RedisOperator' in your configuration.
+
+2021-03-21 22:54:20.819 INFO  com.cloud.user.Application Line:55  - Starting Application on DESKTOP-510LF0A with PID 25776 (F:\ideaProject\cloud-news-dev\news-dev-services-user\target\classes started by 99141 in F:\ideaProject\cloud-news-dev)
+2021-03-21 22:54:20.821 INFO  com.cloud.user.Application Line:655 - The following profiles are active: dev
+2021-03-21 22:54:20.897 WARN  org.springframework.http.converter.json.Jackson2ObjectMapperBuilder Line:127 - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2021-03-21 22:54:21.699 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:249 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-21 22:54:21.701 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:127 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-21 22:54:21.727 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:187 - Finished Spring Data repository scanning in 12ms. Found 0 Redis repository interfaces.
+2021-03-21 22:54:22.186 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:92  - Tomcat initialized with port(s): 8003 (http)
+2021-03-21 22:54:22.195 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8003"]
+2021-03-21 22:54:22.196 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-03-21 22:54:22.196 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-03-21 22:54:22.335 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-03-21 22:54:22.336 INFO  org.springframework.web.context.ContextLoader Line:284 - Root WebApplicationContext: initialization completed in 1424 ms
+2021-03-21 22:54:23.266 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-21 22:54:23.420 INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:84  - Context refreshed
+2021-03-21 22:54:23.435 INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:87  - Found 1 custom documentation plugin(s)
+2021-03-21 22:54:23.444 INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner Line:44  - Scanning for api listing references
+2021-03-21 22:54:23.583 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8003"]
+2021-03-21 22:54:23.610 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:204 - Tomcat started on port(s): 8003 (http) with context path ''
+2021-03-21 22:54:23.614 INFO  com.cloud.user.Application Line:61  - Started Application in 3.608 seconds (JVM running for 5.006)
+2021-03-21 22:57:05.781 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-21 22:57:05.784 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-03-21 22:57:05.817 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 33 ms
+2021-03-21 22:57:21.137 INFO  io.lettuce.core.EpollProvider Line:68  - Starting without optional epoll library
+2021-03-21 22:57:21.139 INFO  io.lettuce.core.KqueueProvider Line:70  - Starting without optional kqueue library
+2021-03-21 22:57:23.815 ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] Line:175 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to 192.168.25.128:6379] with root cause
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:716)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+2021-03-21 23:13:09.579 INFO  com.cloud.user.Application Line:55  - Starting Application on DESKTOP-510LF0A with PID 18844 (F:\ideaProject\cloud-news-dev\news-dev-services-user\target\classes started by 99141 in F:\ideaProject\cloud-news-dev)
+2021-03-21 23:13:09.589 INFO  com.cloud.user.Application Line:655 - The following profiles are active: dev
+2021-03-21 23:13:10.272 WARN  org.springframework.http.converter.json.Jackson2ObjectMapperBuilder Line:127 - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2021-03-21 23:13:11.144 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:249 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-21 23:13:11.146 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:127 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-21 23:13:11.173 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:187 - Finished Spring Data repository scanning in 12ms. Found 0 Redis repository interfaces.
+2021-03-21 23:13:11.716 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:92  - Tomcat initialized with port(s): 8003 (http)
+2021-03-21 23:13:11.725 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8003"]
+2021-03-21 23:13:11.726 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-03-21 23:13:11.726 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-03-21 23:13:11.892 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-03-21 23:13:11.893 INFO  org.springframework.web.context.ContextLoader Line:284 - Root WebApplicationContext: initialization completed in 2015 ms
+2021-03-21 23:13:12.718 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-21 23:13:12.891 INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:84  - Context refreshed
+2021-03-21 23:13:12.913 INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:87  - Found 1 custom documentation plugin(s)
+2021-03-21 23:13:12.923 INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner Line:44  - Scanning for api listing references
+2021-03-21 23:13:13.089 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8003"]
+2021-03-21 23:13:13.124 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:204 - Tomcat started on port(s): 8003 (http) with context path ''
+2021-03-21 23:13:13.130 INFO  com.cloud.user.Application Line:61  - Started Application in 6.878 seconds (JVM running for 10.417)
+2021-03-21 23:13:46.986 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-21 23:13:46.986 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-03-21 23:13:46.991 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 5 ms
+2021-03-21 23:13:55.919 INFO  io.lettuce.core.EpollProvider Line:68  - Starting without optional epoll library
+2021-03-21 23:13:55.921 INFO  io.lettuce.core.KqueueProvider Line:70  - Starting without optional kqueue library
+2021-03-21 23:13:58.543 ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] Line:175 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to 192.168.25.128:6379] with root cause
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:716)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+2021-03-21 23:17:47.743 INFO  com.cloud.user.Application Line:55  - Starting Application on DESKTOP-510LF0A with PID 39112 (F:\ideaProject\cloud-news-dev\news-dev-services-user\target\classes started by 99141 in F:\ideaProject\cloud-news-dev)
+2021-03-21 23:17:47.745 INFO  com.cloud.user.Application Line:655 - The following profiles are active: dev
+2021-03-21 23:17:47.872 WARN  org.springframework.http.converter.json.Jackson2ObjectMapperBuilder Line:127 - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2021-03-21 23:17:48.888 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:249 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-21 23:17:48.890 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:127 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-21 23:17:48.916 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:187 - Finished Spring Data repository scanning in 13ms. Found 0 Redis repository interfaces.
+2021-03-21 23:17:49.344 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:92  - Tomcat initialized with port(s): 8003 (http)
+2021-03-21 23:17:49.352 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8003"]
+2021-03-21 23:17:49.353 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-03-21 23:17:49.353 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-03-21 23:17:49.487 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-03-21 23:17:49.487 INFO  org.springframework.web.context.ContextLoader Line:284 - Root WebApplicationContext: initialization completed in 1614 ms
+2021-03-21 23:17:50.381 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-21 23:17:50.522 INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:84  - Context refreshed
+2021-03-21 23:17:50.534 INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:87  - Found 1 custom documentation plugin(s)
+2021-03-21 23:17:50.542 INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner Line:44  - Scanning for api listing references
+2021-03-21 23:17:50.669 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8003"]
+2021-03-21 23:17:50.691 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:204 - Tomcat started on port(s): 8003 (http) with context path ''
+2021-03-21 23:17:50.693 INFO  com.cloud.user.Application Line:61  - Started Application in 3.718 seconds (JVM running for 5.059)
+2021-03-21 23:17:53.779 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-21 23:17:53.779 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-03-21 23:17:53.785 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 6 ms
+2021-03-21 23:17:59.958 INFO  io.lettuce.core.EpollProvider Line:68  - Starting without optional epoll library
+2021-03-21 23:17:59.960 INFO  io.lettuce.core.KqueueProvider Line:70  - Starting without optional kqueue library

@@ -1,0 +1,37 @@
+2021-05-23 15:37:11.735 WARN  org.springframework.http.converter.json.Jackson2ObjectMapperBuilder Line:127 - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2021-05-23 15:37:11.734 INFO  com.cloud.user.Application Line:55  - Starting Application on DESKTOP-510LF0A with PID 23880 (F:\ideaProject\cloud-news-dev\news-dev-services-user\target\classes started by 99141 in F:\ideaProject\cloud-news-dev)
+2021-05-23 15:37:11.737 INFO  com.cloud.user.Application Line:655 - The following profiles are active: dev
+2021-05-23 15:37:13.933 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:249 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-23 15:37:13.937 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:127 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-23 15:37:13.978 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:187 - Finished Spring Data repository scanning in 19ms. Found 0 Redis repository interfaces.
+2021-05-23 15:37:17.858 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:92  - Tomcat initialized with port(s): 8003 (http)
+2021-05-23 15:37:17.884 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8003"]
+2021-05-23 15:37:17.885 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-05-23 15:37:17.886 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-05-23 15:37:18.144 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-05-23 15:37:18.145 INFO  org.springframework.web.context.ContextLoader Line:284 - Root WebApplicationContext: initialization completed in 6334 ms
+2021-05-23 15:37:23.139 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-23 15:37:24.237 INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:84  - Context refreshed
+2021-05-23 15:37:24.425 INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:87  - Found 1 custom documentation plugin(s)
+2021-05-23 15:37:24.521 INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner Line:44  - Scanning for api listing references
+2021-05-23 15:37:25.596 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8003"]
+2021-05-23 15:37:25.854 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:204 - Tomcat started on port(s): 8003 (http) with context path ''
+2021-05-23 15:37:25.872 INFO  com.cloud.user.Application Line:61  - Started Application in 15.253 seconds (JVM running for 18.826)
+2021-05-23 15:38:56.587 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-23 15:38:56.587 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-05-23 15:38:56.606 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 19 ms
+2021-05-23 15:39:26.929 INFO  io.lettuce.core.EpollProvider Line:68  - Starting without optional epoll library
+2021-05-23 15:39:26.968 INFO  io.lettuce.core.KqueueProvider Line:70  - Starting without optional kqueue library
+2021-05-23 15:39:49.438 ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] Line:175 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to 47.100.69.242:6379] with root cause
+io.netty.channel.ConnectTimeoutException: connection timed out: /47.100.69.242:6379
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)

@@ -1,0 +1,95 @@
+2020-12-27 11:14:58.751 INFO  com.cloud.user.Application Line:55  - Starting Application on DESKTOP-510LF0A with PID 6804 (F:\ideaProject\cloud-news-dev\news-dev-services-user\target\classes started by 99141 in F:\ideaProject\cloud-news-dev)
+2020-12-27 11:14:58.756 INFO  com.cloud.user.Application Line:651 - No active profile set, falling back to default profiles: default
+2020-12-27 11:15:00.084 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:92  - Tomcat initialized with port(s): 8003 (http)
+2020-12-27 11:15:00.092 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8003"]
+2020-12-27 11:15:00.093 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2020-12-27 11:15:00.094 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-12-27 11:15:00.198 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2020-12-27 11:15:00.198 INFO  org.springframework.web.context.ContextLoader Line:284 - Root WebApplicationContext: initialization completed in 1305 ms
+2020-12-27 11:15:00.343 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-27 11:15:00.451 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8003"]
+2020-12-27 11:15:00.472 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:204 - Tomcat started on port(s): 8003 (http) with context path ''
+2020-12-27 11:15:00.474 INFO  com.cloud.user.Application Line:61  - Started Application in 2.307 seconds (JVM running for 3.338)
+2020-12-27 11:17:18.059 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-27 11:17:18.059 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2020-12-27 11:17:18.063 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 4 ms
+2020-12-27 11:17:18.221 INFO  com.cloud.user.controller.HelloController Line:18  - debug:debug----
+2020-12-27 11:17:18.221 INFO  com.cloud.user.controller.HelloController Line:19  - info:info----
+2020-12-27 11:17:18.221 INFO  com.cloud.user.controller.HelloController Line:20  - error:error----
+2020-12-27 11:17:18.221 INFO  com.cloud.user.controller.HelloController Line:21  - warning:warning----
+2020-12-27 11:22:35.253 INFO  com.cloud.user.Application Line:55  - Starting Application on DESKTOP-510LF0A with PID 11848 (F:\ideaProject\cloud-news-dev\news-dev-services-user\target\classes started by 99141 in F:\ideaProject\cloud-news-dev)
+2020-12-27 11:22:35.260 INFO  com.cloud.user.Application Line:651 - No active profile set, falling back to default profiles: default
+2020-12-27 11:22:36.240 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:92  - Tomcat initialized with port(s): 8003 (http)
+2020-12-27 11:22:36.248 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8003"]
+2020-12-27 11:22:36.249 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2020-12-27 11:22:36.249 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-12-27 11:22:36.341 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2020-12-27 11:22:36.341 INFO  org.springframework.web.context.ContextLoader Line:284 - Root WebApplicationContext: initialization completed in 933 ms
+2020-12-27 11:22:36.480 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-27 11:22:36.589 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8003"]
+2020-12-27 11:22:36.610 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:204 - Tomcat started on port(s): 8003 (http) with context path ''
+2020-12-27 11:22:36.612 INFO  com.cloud.user.Application Line:61  - Started Application in 1.919 seconds (JVM running for 2.987)
+2020-12-27 11:22:59.422 INFO  com.cloud.user.Application Line:55  - Starting Application on DESKTOP-510LF0A with PID 12508 (F:\ideaProject\cloud-news-dev\news-dev-services-user\target\classes started by 99141 in F:\ideaProject\cloud-news-dev)
+2020-12-27 11:22:59.459 INFO  com.cloud.user.Application Line:651 - No active profile set, falling back to default profiles: default
+2020-12-27 11:23:00.382 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:92  - Tomcat initialized with port(s): 8003 (http)
+2020-12-27 11:23:00.390 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8003"]
+2020-12-27 11:23:00.390 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2020-12-27 11:23:00.390 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-12-27 11:23:00.494 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2020-12-27 11:23:00.494 INFO  org.springframework.web.context.ContextLoader Line:284 - Root WebApplicationContext: initialization completed in 985 ms
+2020-12-27 11:23:00.631 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-27 11:23:00.731 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8003"]
+2020-12-27 11:23:00.753 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:204 - Tomcat started on port(s): 8003 (http) with context path ''
+2020-12-27 11:23:00.755 INFO  com.cloud.user.Application Line:61  - Started Application in 2.211 seconds (JVM running for 3.224)
+2020-12-27 22:54:50.036 INFO  org.hibernate.validator.internal.util.Version Line:21  - HV000001: Hibernate Validator 6.0.18.Final
+2020-12-27 22:54:50.092 INFO  com.cloud.user.Application Line:55  - Starting Application on DESKTOP-510LF0A with PID 20392 (F:\ideaProject\cloud-news-dev\news-dev-services-user\target\classes started by 99141 in F:\ideaProject\cloud-news-dev)
+2020-12-27 22:54:50.093 INFO  com.cloud.user.Application Line:651 - No active profile set, falling back to default profiles: default
+2020-12-27 22:54:51.447 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:92  - Tomcat initialized with port(s): 8003 (http)
+2020-12-27 22:54:51.458 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8003"]
+2020-12-27 22:54:51.459 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2020-12-27 22:54:51.459 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-12-27 22:54:51.586 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2020-12-27 22:54:51.586 INFO  org.springframework.web.context.ContextLoader Line:284 - Root WebApplicationContext: initialization completed in 1436 ms
+2020-12-27 22:54:51.773 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-27 22:54:51.900 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8003"]
+2020-12-27 22:54:51.914 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Pausing ProtocolHandler ["http-nio-8003"]
+2020-12-27 22:54:51.914 INFO  org.apache.catalina.core.StandardService Line:173 - Stopping service [Tomcat]
+2020-12-27 22:54:51.921 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Stopping ProtocolHandler ["http-nio-8003"]
+2020-12-27 22:54:51.922 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Destroying ProtocolHandler ["http-nio-8003"]
+2020-12-27 22:54:51.924 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener Line:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-12-27 22:54:51.929 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter Line:40  - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8003 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8003 or configure this application to listen on another port.
+
+2020-12-27 22:54:51.931 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-27 23:09:33.949 INFO  com.cloud.user.Application Line:55  - Starting Application on DESKTOP-510LF0A with PID 23828 (F:\ideaProject\cloud-news-dev\news-dev-services-user\target\classes started by 99141 in F:\ideaProject\cloud-news-dev)
+2020-12-27 23:09:33.955 INFO  com.cloud.user.Application Line:655 - The following profiles are active: dev
+2020-12-27 23:09:35.747 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:92  - Tomcat initialized with port(s): 8103 (http)
+2020-12-27 23:09:35.757 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8103"]
+2020-12-27 23:09:35.757 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2020-12-27 23:09:35.758 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-12-27 23:09:35.906 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2020-12-27 23:09:35.907 INFO  org.springframework.web.context.ContextLoader Line:284 - Root WebApplicationContext: initialization completed in 1704 ms
+2020-12-27 23:09:36.142 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-27 23:09:36.327 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8103"]
+2020-12-27 23:09:36.364 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:204 - Tomcat started on port(s): 8103 (http) with context path ''
+2020-12-27 23:09:36.368 INFO  com.cloud.user.Application Line:61  - Started Application in 3.554 seconds (JVM running for 5.516)
+2020-12-27 23:09:50.711 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-27 23:09:50.712 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2020-12-27 23:09:50.722 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 10 ms
+2020-12-27 23:09:50.755 INFO  com.cloud.user.controller.HelloController Line:18  - debug:debug----
+2020-12-27 23:09:50.756 INFO  com.cloud.user.controller.HelloController Line:19  - info:info----
+2020-12-27 23:09:50.757 INFO  com.cloud.user.controller.HelloController Line:20  - error:error----
+2020-12-27 23:09:50.758 INFO  com.cloud.user.controller.HelloController Line:21  - warning:warning----

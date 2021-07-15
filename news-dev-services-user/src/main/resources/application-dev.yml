@@ -1,0 +1,17 @@
+#web访问端口
+server:
+  port: 8003
+  tomcat:
+    uri-encoding: UTF-8
+    max-swallow-size: -1  #tamcat默认2m，超过2m的文件不会被捕获
+
+#配置redis
+spring:
+  redis:
+    host: 47.100.69.242
+    port: 6379
+    password: 123456
+    database: 0
+#配置域名
+website:
+  domain-name: cloudnews.com
