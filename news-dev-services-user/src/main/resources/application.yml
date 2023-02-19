@@ -10,13 +10,13 @@ spring:
   profiles:
     active: dev #yml中配置文件的配置环境
   application:
-    name: servic-name
+    name: service-name
   datasource:                                         # 数据源的相关配置
     type: com.zaxxer.hikari.HikariDataSource          # 数据源类型：HikariCP
     driver-class-name: com.mysql.jdbc.Driver          # mysql驱动
-    url: jdbc:mysql://localhost:3306/cloud-news-dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+    url: jdbc:mysql://localhost:3306/cloud-news-dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=UTC
     username: root
-    password: root
+    password: root2022
     hikari:
       connection-timeout: 30000       # 等待连接池分配连接的最大时长（毫秒），超过这个时长还没可用的连接则发生SQLException， 默认:30秒
       minimum-idle: 5                 # 最小连接数

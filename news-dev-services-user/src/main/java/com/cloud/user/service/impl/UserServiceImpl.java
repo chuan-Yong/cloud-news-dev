@@ -10,6 +10,8 @@ import com.cloud.user.mapper.AppUserMapper;
 import com.cloud.user.service.UserService;
 import com.cloud.utils.DateUtil;
 import com.cloud.utils.DesensitizationUtil;
+import com.cloud.utils.JsonUtils;
+import com.cloud.utils.RedisOperator;
 import org.apache.commons.lang3.StringUtils;
 import org.n3r.idworker.Sid;
 import org.springframework.beans.BeanUtils;
@@ -35,12 +37,14 @@ public class UserServiceImpl implements UserService {
     @Autowired
     public Sid sid;
 
+    @Autowired
+    public RedisOperator redisOperator;
+
+    public static final String REDIS_USER_INFO = "redis_user_info";
+
     @Override
     public AppUser getUser(String userId) {
-        Example example = new Example(AppUser.class);
-        Example.Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("id", userId);
-        return userMapper.selectOneByExample(criteria);
+        return userMapper.selectByPrimaryKey(userId);
     }
 
     @Override
@@ -48,7 +52,7 @@ public class UserServiceImpl implements UserService {
         Example userExample = new Example(AppUser.class);
         Example.Criteria criteria = userExample.createCriteria();
         criteria.andEqualTo("mobile",mobile);
-        return userMapper.selectOneByExample(criteria);
+        return userMapper.selectOneByExample(userExample);
     }
 
     @Transactional(rollbackFor = Exception.class)
@@ -75,6 +79,9 @@ public class UserServiceImpl implements UserService {
     public void updateUserInfo(UpdateUserInfoBo userInfoBo) {
 
         String userId = userInfoBo.getId();
+        //先删除redis缓存数据,然后在进行更新;
+        redisOperator.del(REDIS_USER_INFO + ":" + userId);
+
         if(StringUtils.isBlank(userId)) {
             GraceException.display(ResponseStatusEnum.USER_STATUS_ERROR);
         }
@@ -86,6 +93,19 @@ public class UserServiceImpl implements UserService {
         int result = userMapper.updateByPrimaryKeySelective(user);
         if(result != 1) {
             GraceException.display(ResponseStatusEnum.USER_UPDATE_ERROR);
+        }
+
+        //查询最新的用户基本信息;
+        AppUser appUser = getUser(userId);
+        redisOperator.set(REDIS_USER_INFO+":"+userId,
+                JsonUtils.objectToJson(appUser));
+
+        //缓存双删策略
+        try {
+            Thread.sleep(100);
+            redisOperator.del(REDIS_USER_INFO + ":" + userId);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }

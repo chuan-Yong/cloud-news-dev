@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+    <property value="F:/ideaProject/cloud-news-dev/log" name="LOG_HOME"/>
+    <!--Console输出设置-->
+<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <!--格式化输出：%d表示日期，%-5level表示从左显示5个字符宽度,%thread表示线程，-->
+    <encoder>
+        <pattern>%white(%-12(%d{yyyy-MM-dd HH:mm:ss.SSS})) |-%cyan(%-5level)  %green([%thread]) %c [%L] -| %msg%n</pattern>
+        <charset>utf-8</charset>
+    </encoder>
+</appender>
+
+    <!--按照每天生成日志文件-->
+<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender" >
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+        <fileNamePattern>${LOG_HOME}/news-user.%d{yyyy-MM-dd}.log</fileNamePattern>
+        <MaxHistory>100</MaxHistory>
+    </rollingPolicy>
+    <encoder>
+        <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger Line:%-3L - %msg%n</pattern>
+        <charset>utf-8</charset>
+    </encoder>
+</appender>
+
+<root level="INFO">
+    <appender-ref ref="FILE"/>
+    <appender-ref ref="CONSOLE"/>
+</root>
+
+</configuration>

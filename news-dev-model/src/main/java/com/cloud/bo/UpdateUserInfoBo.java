@@ -65,13 +65,13 @@ public class UpdateUserInfoBo {
             this.nickname = nickname;
         }
 
-        public String getFace() {
+      /*  public String getFace() {
             return face;
         }
 
         public void setFace(String face) {
             this.face = face;
-        }
+        }*/
 
         public String getRealname() {
             return realname;

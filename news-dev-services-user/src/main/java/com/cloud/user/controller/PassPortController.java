@@ -6,10 +6,11 @@ import com.cloud.enums.UserStatus;
 import com.cloud.grace.result.GraceJSONResult;
 import com.cloud.grace.result.ResponseStatusEnum;
 import com.cloud.service.api.BaseController;
-import com.cloud.service.api.PassPortControllerApi;
+import com.cloud.service.api.controller.user.PassPortControllerApi;
 import com.cloud.user.service.UserService;
 import com.cloud.utils.IPUtil;
 import com.cloud.utils.InformationUtils;
+import com.cloud.utils.JsonUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
@@ -40,14 +41,17 @@ public class PassPortController extends BaseController implements PassPortContro
         //设置请求时间为60s；
         redisOperator.setnx60s(MOBILE_SMSCODE + ":" + userIp,userIp);
         //String code = "123456";
+         mobile = "17779740732";
         String random = (int)((Math.random() * 9 + 1) * 100000) + "";
         try {
-            informationUtils.sendMessage("17779740732",random);
+            //informationUtils.sendMessage("17779740732",random);
             //把验证码存入redis中;
             redisOperator.set(MOBILE_SMSCODE + ":" +mobile,random);
+            //redisOperator.set(MOBILE_SMSCODE + ":" +mobile,"111111");
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println("randow:"+random);
         return GraceJSONResult.ok();
     }
 
@@ -74,22 +78,36 @@ public class PassPortController extends BaseController implements PassPortContro
         if(appUser != null && appUser.getActiveStatus().equals(UserStatus.FROZEN.type)) {
             return GraceJSONResult.errorCustom(ResponseStatusEnum.USER_FROZEN);
         } else  if (appUser == null) {
-            userService.createUser(mobile);
+            appUser = userService.createUser(mobile);
         }
 
         //设置分布式cookie
-        assert appUser != null;
+        //assert appUser != null;
         Integer activeStatus = appUser.getActiveStatus();
         if(!activeStatus.equals(UserStatus.FROZEN.type)) {
             String uToken = UUID.randomUUID().toString();
             redisOperator.set(REDIS_USER_TOKEN + ":" + appUser.getId(),uToken);
+            redisOperator.set(REDIS_USER_INFO + ":" + appUser.getId(), JsonUtils.objectToJson(appUser));
+
             setCookie(servletRequest,servletResponse,"utoken",uToken,REDIS_MAXAGE);
+            System.out.println("userId:"+appUser.getId());
             setCookie(servletRequest,servletResponse,"uid",appUser.getId(),REDIS_MAXAGE);
         }
-
         //用户登录或者注册成功删除redis中的验证码信息，只允许使用一次
         redisOperator.del(MOBILE_SMSCODE + ":" + mobile);
         return GraceJSONResult.ok(activeStatus);
     }
 
+    @Override
+    public GraceJSONResult logOut(String userId,
+                                  HttpServletRequest request,
+                                  HttpServletResponse response) {
+
+        redisOperator.del(REDIS_USER_TOKEN + ":" + userId);
+
+        setCookie(request, response, "utoken", "", COOKIE_DELETE);
+        setCookie(request, response, "uid", "", COOKIE_DELETE);
+
+        return GraceJSONResult.ok();
+    }
 }

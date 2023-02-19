@@ -1,0 +1,14 @@
+#web访问端口
+server:
+  port: 8005
+  tomcat:
+    uri-encoding: UTF-8
+    max-swallow-size: -1  #tamcat默认2m，超过2m的文件不会被捕获
+
+#配置redis
+spring:
+  redis:
+    host: 192.168.25.128
+    port: 6379
+    password: 123456
+    database: 0

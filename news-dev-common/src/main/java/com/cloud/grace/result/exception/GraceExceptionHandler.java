@@ -1,9 +1,11 @@
 package com.cloud.grace.result.exception;
 
 import com.cloud.grace.result.GraceJSONResult;
+import com.cloud.grace.result.ResponseStatusEnum;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
 
 /**
  * @Author: ycy
@@ -19,5 +21,12 @@ public class GraceExceptionHandler {
     public GraceJSONResult returnMyException(CustomException exception){
         exception.printStackTrace();
         return GraceJSONResult.exception(exception.getResponseStatusEnum());
+    }
+
+    @ExceptionHandler(MaxUploadSizeExceededException.class)
+    @ResponseBody
+    public GraceJSONResult returnMaxUploadSizeExceededException(MaxUploadSizeExceededException exception){
+        exception.printStackTrace();
+        return GraceJSONResult.errorCustom(ResponseStatusEnum.FILE_MAX_SIZE_ERROR);
     }
 }

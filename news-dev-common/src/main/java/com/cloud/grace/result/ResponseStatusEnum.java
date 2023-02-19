@@ -42,7 +42,7 @@ public enum  ResponseStatusEnum {
     ADMIN_USERNAME_NULL_ERROR(561, false, "管理员登录名不能为空！"),
     ADMIN_USERNAME_EXIST_ERROR(562, false, "管理员登录名已存在！"),
     ADMIN_NAME_NULL_ERROR(563, false, "管理员负责人不能为空！"),
-    ADMIN_PASSWORD_ERROR(564, false, "密码不能为空后者两次输入不一致！"),
+    ADMIN_PASSWORD_ERROR(564, false, "密码不能为空或者两次输入不一致！"),
     ADMIN_CREATE_ERROR(565, false, "添加管理员失败！"),
     ADMIN_PASSWORD_NULL_ERROR(566, false, "密码不能为空！"),
     ADMIN_NOT_EXIT_ERROR(567, false, "管理员不存在或密码错误！"),

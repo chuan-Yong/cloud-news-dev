@@ -8,10 +8,16 @@ server:
 #配置redis
 spring:
   redis:
-    host: 47.100.69.242
+    host: 127.0.0.1
     port: 6379
-    password: 123456
-    database: 0
+    password: 111111
+    database: 1
+
 #配置域名
 website:
-  domain-name: cloudnews.com
+  domain-name: localhost
+
+#开启sql打印
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

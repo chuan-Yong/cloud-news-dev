@@ -24,7 +24,7 @@ public class Swagger2 {
     // 配置swagger2核心配置 docket
     @Bean
     public Docket createRestApi() {
-        Predicate<RequestHandler> userPredicate = RequestHandlerSelectors.basePackage("com.cloud.user");
+        Predicate<RequestHandler> userPredicate = RequestHandlerSelectors.basePackage("com.cloud");
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
@@ -37,15 +37,15 @@ public class Swagger2 {
                 // 文档页标题
                 .title("新闻·自媒体接口api")
                 // 联系人信息
-                .contact(new Contact("cloud-news",
-                        "https://www.cloud-news.com",
+                .contact(new Contact("余小帅",
+                        "https://www.cloudnews.com",
                         "991416851@qq.com"))
                 // 详细信息
                 .description("新闻·自媒体平台提供的api文档")
                 // 文档版本号
                 .version("1.0.1")
                 // 网站地址
-                .termsOfServiceUrl("https://www.cloud-news.com")
+                .termsOfServiceUrl("https://www.cloudnews.com")
                 .build();
     }
 }

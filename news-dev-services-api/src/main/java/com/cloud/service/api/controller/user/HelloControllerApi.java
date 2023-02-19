@@ -1,4 +1,4 @@
-package com.cloud.service.api;
+package com.cloud.service.api.controller.user;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
