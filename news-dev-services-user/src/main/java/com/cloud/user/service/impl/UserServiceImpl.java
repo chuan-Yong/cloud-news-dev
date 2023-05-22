@@ -7,11 +7,13 @@ import com.cloud.enums.UserStatus;
 import com.cloud.grace.result.ResponseStatusEnum;
 import com.cloud.grace.result.exception.GraceException;
 import com.cloud.user.mapper.AppUserMapper;
+import com.cloud.user.mapper.AppUserMapperCustom;
 import com.cloud.user.service.UserService;
 import com.cloud.utils.DateUtil;
 import com.cloud.utils.DesensitizationUtil;
 import com.cloud.utils.JsonUtils;
 import com.cloud.utils.RedisOperator;
+import com.cloud.vo.PublisherVO;
 import org.apache.commons.lang3.StringUtils;
 import org.n3r.idworker.Sid;
 import org.springframework.beans.BeanUtils;
@@ -21,6 +23,9 @@ import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @Author: ycy
@@ -39,6 +44,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     public RedisOperator redisOperator;
+
+    @Autowired
+    public AppUserMapperCustom appUserMapperCustom;
 
     public static final String REDIS_USER_INFO = "redis_user_info";
 
@@ -108,4 +116,13 @@ public class UserServiceImpl implements UserService {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public List<PublisherVO> getUserList(List<String> userIdList) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("userIdList", userIdList);
+        List<PublisherVO> publisherList = appUserMapperCustom.getUserList(map);
+        return publisherList;
+    }
+
 }

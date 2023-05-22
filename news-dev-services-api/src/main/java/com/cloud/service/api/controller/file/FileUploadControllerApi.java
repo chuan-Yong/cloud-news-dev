@@ -24,7 +24,7 @@ public interface FileUploadControllerApi {
     GraceJSONResult fileUpload(@RequestParam String userId, MultipartFile file) throws Exception;
 
     @ApiOperation(value = "用户上传人脸信息", notes = "用户上传人脸信息", httpMethod = "POST")
-    @PostMapping("/uploadToGridFs")
+    @PostMapping("/uploadToGridFS")
     GraceJSONResult uploadToGridFs(@RequestBody NewAdminBO newAdminBO) throws Exception;
 
     @ApiOperation(value = "查看上传人脸信息", notes = "查看上传人脸信息", httpMethod = "GET")

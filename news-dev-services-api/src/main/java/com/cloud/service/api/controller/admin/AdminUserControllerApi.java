@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 @RequestMapping("/adminMng")
 public interface AdminUserControllerApi {
 
-    @ApiOperation(value = "hello方法的接口", notes = "hello方法的接口", httpMethod = "POST")
+    @ApiOperation(value = "admin登录的接口", notes = "admin登录的接口", httpMethod = "POST")
     @PostMapping("/adminLogin")
     GraceJSONResult adminLogin(@RequestBody AdminLoginBO adminLoginBo,
                                       HttpServletRequest request,
@@ -30,13 +30,14 @@ public interface AdminUserControllerApi {
 
     @ApiOperation(value = "判断用户名是否存在的接口", notes = "判断用户名是否存在的接口", httpMethod = "POST")
     @PostMapping("/adminIsExist")
-    GraceJSONResult adminIsExist(@RequestBody AdminLoginBO adminLoginBo) ;
+    GraceJSONResult adminIsExist(@RequestParam String userName) ;
 
     @ApiOperation(value = "添加admin的接口", notes = "添加admin的接口", httpMethod = "POST")
     @PostMapping("/addNewAdmin")
     GraceJSONResult addNewAdmin(@RequestBody NewAdminBO newAdminBO,
                                         HttpServletRequest request,
                                         HttpServletResponse response) ;
+
     @ApiOperation(value = "查询admin列表", notes = "查询admin列表", httpMethod = "POST")
     @PostMapping("/getAdminList")
     GraceJSONResult getAdminList(

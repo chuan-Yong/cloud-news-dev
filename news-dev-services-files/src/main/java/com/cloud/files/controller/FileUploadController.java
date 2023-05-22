@@ -105,7 +105,7 @@ public class FileUploadController implements FileUploadControllerApi {
     public void readInGridFS(String faceId,
                              HttpServletRequest request,
                              HttpServletResponse response) throws Exception {
-        if (StringUtils.isNotBlank(faceId) || StringUtils.equalsIgnoreCase(faceId,null)) {
+        if (StringUtils.isBlank(faceId) || StringUtils.equalsIgnoreCase(faceId,null)) {
             GraceException.display(ResponseStatusEnum.ADMIN_FACE_NULL_ERROR);
         }
 

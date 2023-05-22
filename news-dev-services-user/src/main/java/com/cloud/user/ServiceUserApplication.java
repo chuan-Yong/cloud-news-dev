@@ -12,9 +12,9 @@ import tk.mybatis.spring.annotation.MapperScan;
 @SpringBootApplication(exclude = MongoAutoConfiguration.class)
 @MapperScan(value = "com.cloud.user.mapper")
 @ComponentScan(basePackages = {"com.cloud","org.n3r"})
-public class Application {
+public class ServiceUserApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class,args);
+        SpringApplication.run(ServiceUserApplication.class,args);
     }
 }

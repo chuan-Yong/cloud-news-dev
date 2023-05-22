@@ -18,9 +18,14 @@ public class AdminTokenInterceptor extends BaseInterceptor implements HandlerInt
     public boolean preHandle(HttpServletRequest request,
                              HttpServletResponse response,
                              Object handler) throws Exception {
-        String userId = request.getHeader("adminUserId");
-        String userToken = request.getHeader("adminUserToken");
-        boolean run = verifyUserIdToken(userId,userToken,REDIS_ADMIN_TOKEN);
+        String adminUserId = request.getHeader("adminUserId");
+        String adminUserToken = request.getHeader("adminUserToken");
+        System.out.println("=====================================================================");
+        System.out.println("AdminTokenInterceptor - adminUserId = " + adminUserId);
+        System.out.println("AdminTokenInterceptor - adminUserToken = " + adminUserToken);
+        System.out.println("=====================================================================");
+
+        boolean run = verifyUserIdToken(adminUserId,adminUserToken,REDIS_ADMIN_TOKEN);
         return true;
     }
 

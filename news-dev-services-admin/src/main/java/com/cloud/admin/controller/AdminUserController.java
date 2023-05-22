@@ -13,26 +13,26 @@ import com.cloud.utils.RedisOperator;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 
 /**
- * @author 99141
+ * @author ycy
  */
 @RestController
 public class AdminUserController extends BaseController implements AdminUserControllerApi {
 
     final static Logger LOGGER = LoggerFactory.getLogger(AdminUserController.class);
 
-    @Autowired
+    @Resource
     private RedisOperator redisOperator;
 
-    @Autowired
+    @Resource
     private AdminUserService adminService;
 
     @Override
@@ -69,8 +69,8 @@ public class AdminUserController extends BaseController implements AdminUserCont
 
 
     @Override
-    public GraceJSONResult adminIsExist(AdminLoginBO adminLoginBo) {
-        checkAdminExist(adminLoginBo.getUsername());
+    public GraceJSONResult adminIsExist(String username) {
+        checkAdminExist(username);
         return GraceJSONResult.ok();
     }
 
@@ -97,7 +97,7 @@ public class AdminUserController extends BaseController implements AdminUserCont
 
         //判断两次密码是否一致
         if (StringUtils.isNotBlank(newAdminBO.getPassword())) {
-            if (StringUtils.equalsIgnoreCase(newAdminBO.getPassword(),newAdminBO.getConfirmPassword())) {
+            if (!StringUtils.equalsIgnoreCase(newAdminBO.getPassword(),newAdminBO.getConfirmPassword())) {
                 return GraceJSONResult.errorCustom(ResponseStatusEnum.ADMIN_PASSWORD_ERROR);
             }
         }

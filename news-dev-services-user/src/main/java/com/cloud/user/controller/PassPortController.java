@@ -51,7 +51,7 @@ public class PassPortController extends BaseController implements PassPortContro
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("randow:"+random);
+        System.out.println("random:"+random);
         return GraceJSONResult.ok();
     }
 

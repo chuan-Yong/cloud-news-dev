@@ -5,8 +5,9 @@ import com.cloud.service.api.controller.user.HelloControllerApi;
 import com.cloud.utils.RedisOperator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  * @author 99141
@@ -16,7 +17,7 @@ public class HelloController implements HelloControllerApi {
 
     final static Logger LOGGER = LoggerFactory.getLogger(HelloController.class);
 
-    @Autowired
+    @Resource
     private RedisOperator redisOperator;
 
     @Override

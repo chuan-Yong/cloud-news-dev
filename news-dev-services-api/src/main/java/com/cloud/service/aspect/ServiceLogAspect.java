@@ -20,7 +20,6 @@ public class ServiceLogAspect {
 
    final static Logger logger = LoggerFactory.getLogger(ServiceLogAspect.class);
 
-
    @Around("execution(* com.cloud.*.service.impl..*.*(..))")
    public Object recordTimeOfService(ProceedingJoinPoint joinPoint)throws Throwable {
       logger.info("==== 开始执行 {}.{}====",

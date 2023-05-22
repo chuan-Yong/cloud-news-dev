@@ -26,6 +26,8 @@ public interface PassPortControllerApi {
                             BindingResult bindingResult,
                             HttpServletRequest servletRequest,
                             HttpServletResponse servletResponse);
+
+
     @ApiOperation(value = "用户退出登录接口", notes = "用户退出登录接口", httpMethod = "POST")
     @PostMapping("/logout")
     public GraceJSONResult logOut(@RequestParam String userId ,

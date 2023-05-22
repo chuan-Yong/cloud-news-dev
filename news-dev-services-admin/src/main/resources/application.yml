@@ -1,6 +1,6 @@
 #web访问端口
 server:
-  #port: 8003
+  port: 8005
   tomcat:
     uri-encoding: UTF-8
     max-swallow-size: -1  #tamcat默认2m，超过2m的文件不会被捕获
@@ -30,5 +30,9 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH-mm-ss
     time-zone: GMT+8
-
+    #mongodb
+  data:
+      mongodb:
+        uri: mongodb://root:ycy@localhost:27017
+        database: cloud-news
 

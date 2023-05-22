@@ -2,6 +2,9 @@ package com.cloud.user.service;
 
 import com.cloud.bo.UpdateUserInfoBo;
 import com.cloud.entity.AppUser;
+import com.cloud.vo.PublisherVO;
+
+import java.util.List;
 
 /**
  * @Author: ycy
@@ -27,4 +30,9 @@ public interface UserService {
      * 更新用户
      */
     void updateUserInfo(UpdateUserInfoBo userInfoBo);
+
+    /**
+     * 根据用户id查询用户
+     */
+    public List<PublisherVO> getUserList(List<String> userIdList);
 }

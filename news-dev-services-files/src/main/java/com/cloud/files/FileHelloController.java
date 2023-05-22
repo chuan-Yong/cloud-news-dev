@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
  * @author 99141
  */
 @RestController
-public class HelloController implements HelloControllerApi {
+public class FileHelloController implements HelloControllerApi {
 
-    final static Logger LOGGER = LoggerFactory.getLogger(HelloController.class);
+    final static Logger LOGGER = LoggerFactory.getLogger(FileHelloController.class);
 
     @Autowired
     private RedisOperator redisOperator;

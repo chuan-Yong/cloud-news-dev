@@ -1,6 +1,7 @@
-package com.cloud.admin.service;
+package com.cloud.admin.service.impl;
 
 import com.cloud.admin.mapper.AdminUserMapper;
+import com.cloud.admin.service.AdminUserService;
 import com.cloud.bo.NewAdminBO;
 import com.cloud.entity.AdminUser;
 import com.cloud.grace.result.ResponseStatusEnum;
@@ -26,7 +27,7 @@ import java.util.List;
  * @Modified by:ycy
  */
 @Service
-public class AdminUserServiceImpl implements AdminUserService{
+public class AdminUserServiceImpl implements AdminUserService {
 
     @Autowired
     private AdminUserMapper adminUserMapper;
@@ -38,7 +39,8 @@ public class AdminUserServiceImpl implements AdminUserService{
     public AdminUser queryAdminUserByUserName(String userName) {
         Example example = new Example(AdminUser.class);
         example.createCriteria().andEqualTo("username",userName);
-        return adminUserMapper.selectOneByExample(example);
+        AdminUser adminUser = adminUserMapper.selectOneByExample(example);
+        return adminUser;
     }
 
     @Transactional
@@ -54,7 +56,7 @@ public class AdminUserServiceImpl implements AdminUserService{
         }
 
         //判断是否开启人脸验证 如开启则关联用户进行保存
-        if (StringUtils.isNotBlank(adminUser.getFaceId())) {
+        if (StringUtils.isNotBlank(newAdminUser.getFaceId())) {
             adminUser.setFaceId(newAdminUser.getFaceId());
         }
 
@@ -70,7 +72,7 @@ public class AdminUserServiceImpl implements AdminUserService{
     @Override
     public PagedGridResult queryAdminList(Integer page, Integer pageSize) {
         Example example = new Example(AdminUser.class);
-        example.orderBy("createTime").desc();
+        example.orderBy("createdTime").desc();
         PageHelper.startPage(page, pageSize);
         List<AdminUser> adminUsers = adminUserMapper.selectByExample(example);
         return setterPagedGrid(adminUsers,page);
