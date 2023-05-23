@@ -14,6 +14,7 @@
         <module>news-dev-services-user</module>
         <module>news-dev-services-files</module>
         <module>news-dev-services-admin</module>
+        <module>news-dev-services-article</module>
     </modules>
 
     <packaging>pom</packaging>

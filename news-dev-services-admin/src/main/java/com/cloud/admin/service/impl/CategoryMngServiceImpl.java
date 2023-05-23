@@ -5,7 +5,7 @@ import com.cloud.admin.service.CategoryMngService;
 import com.cloud.entity.Category;
 import com.cloud.grace.result.ResponseStatusEnum;
 import com.cloud.grace.result.exception.GraceException;
-import com.cloud.utils.RedisOperator;
+import com.cloud.service.BaseService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,15 +22,10 @@ import java.util.List;
  */
 @Service
 @Transactional
-public class CategoryMngServiceImpl implements CategoryMngService {
+public class CategoryMngServiceImpl extends BaseService implements CategoryMngService {
 
     @Resource
     private CategoryMapper categoryMapper;
-
-    @Resource
-    public RedisOperator redis;
-
-    public static final String REDIS_ALL_CATEGORY = "redis_all_category";
 
     @Override
     public void createCategory(Category category) {

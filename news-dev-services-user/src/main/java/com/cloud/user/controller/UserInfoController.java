@@ -77,7 +77,7 @@ public class UserInfoController extends BaseController implements UserInfoContro
     @Override
     public GraceJSONResult getUserInfo(String userId) {
         //判断参数不为空
-        if(StringUtils.isNotBlank(userId)) {
+        if(StringUtils.isBlank(userId)) {
             return GraceJSONResult.errorCustom(ResponseStatusEnum.UN_LOGIN);
         }
         AppUser user = getUser(userId);

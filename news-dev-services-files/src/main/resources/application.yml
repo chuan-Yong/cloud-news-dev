@@ -31,5 +31,5 @@ spring:
 fdfs:
   connect-timeout: 30
   so-timeout: 30
-  tracker-list: 172.28.62.164:22122
+  tracker-list: 172.17.202.109:22122
 

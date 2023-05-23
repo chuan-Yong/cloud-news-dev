@@ -2,11 +2,11 @@ package com.cloud.user.service.impl;
 
 import com.cloud.entity.AppUser;
 import com.cloud.enums.UserStatus;
+import com.cloud.service.BaseService;
 import com.cloud.user.mapper.AppUserMapper;
 import com.cloud.user.service.AppUserMngService;
 import com.cloud.utils.PagedGridResult;
 import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,7 +24,7 @@ import java.util.List;
  */
 @Service
 @Transactional
-public class AppUserMngServiceImpl implements AppUserMngService {
+public class AppUserMngServiceImpl extends BaseService implements AppUserMngService {
 
     @Resource
     private AppUserMapper appUserMapper;
@@ -68,14 +68,4 @@ public class AppUserMngServiceImpl implements AppUserMngService {
         appUserMapper.updateByPrimaryKeySelective(user);
     }
 
-    public PagedGridResult setterPagedGrid(List<?> list,
-                                           Integer page) {
-        PageInfo<?> pageList = new PageInfo<>(list);
-        PagedGridResult gridResult = new PagedGridResult();
-        gridResult.setRows(list);
-        gridResult.setPage(page);
-        gridResult.setRecords(pageList.getTotal());
-        gridResult.setTotal(pageList.getPages());
-        return gridResult;
-    }
 }

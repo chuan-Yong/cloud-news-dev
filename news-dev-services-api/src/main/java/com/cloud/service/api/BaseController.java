@@ -39,6 +39,8 @@ public class BaseController {
 
     public static final String REDIS_ALL_CATEGORY = "redis_all_category";
 
+    public static final String REDIS_ARTICLE_READ_COUNTS = "redis_article_read_counts";
+
     public static final Integer REDIS_MAXAGE = 30 * 24 * 60 * 60;
 
     public static final Integer COOKIE_DELETE = 0;

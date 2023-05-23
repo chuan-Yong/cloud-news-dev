@@ -92,7 +92,6 @@ public class AppUserMngController extends BaseController implements AppUserMngCo
             return GraceJSONResult.errorCustom(ResponseStatusEnum.USER_NOT_EXIST_ERROR);
         }
         List<String> userIdList = JsonUtils.jsonToList(userIds, String.class);
-//        System.out.println(userIdList);
 
         List<PublisherVO> userList = userService.getUserList(userIdList);
 
