@@ -21,6 +21,12 @@ public class Comments {
     private String fatherId;
 
     /**
+     * 冗余的用户头像
+     */
+    @Column(name = "comment_user_face")
+    private String commentUserFace;
+
+    /**
      * 回复的那个文章id
      */
     @Column(name = "article_id")
@@ -235,5 +241,13 @@ public class Comments {
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public String getCommentUserFace() {
+        return commentUserFace;
+    }
+
+    public void setCommentUserFace(String commentUserFace) {
+        this.commentUserFace = commentUserFace;
     }
 }

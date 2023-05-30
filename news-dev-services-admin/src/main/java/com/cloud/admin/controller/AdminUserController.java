@@ -9,7 +9,6 @@ import com.cloud.grace.result.ResponseStatusEnum;
 import com.cloud.service.api.BaseController;
 import com.cloud.service.api.controller.admin.AdminUserControllerApi;
 import com.cloud.utils.PagedGridResult;
-import com.cloud.utils.RedisOperator;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,9 +27,6 @@ import java.util.UUID;
 public class AdminUserController extends BaseController implements AdminUserControllerApi {
 
     final static Logger LOGGER = LoggerFactory.getLogger(AdminUserController.class);
-
-    @Resource
-    private RedisOperator redisOperator;
 
     @Resource
     private AdminUserService adminService;

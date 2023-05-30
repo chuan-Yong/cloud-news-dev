@@ -41,7 +41,7 @@ public interface AppUserMngControllerApi {
                                            @RequestParam Integer doStatus);
 
 
-    @GetMapping("queryByIds")
+    @GetMapping("queryUserByIds")
     @ApiOperation(value = "根据用户id查询用户", notes = "根据用户id查询用户", httpMethod = "GET")
     GraceJSONResult queryByIds(@RequestParam String userIds);
 }

@@ -1,10 +1,17 @@
 package com.cloud.service.api;
 
+import com.cloud.grace.result.GraceJSONResult;
+import com.cloud.service.api.controller.user.UserInfoControllerApi;
+import com.cloud.utils.JsonUtils;
 import com.cloud.utils.RedisOperator;
+import com.cloud.vo.AppUserVo;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
+import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +21,7 @@ import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @Author: ycy
@@ -25,6 +33,9 @@ public class BaseController {
 
     @Autowired
     public RedisOperator redisOperator;
+
+    @Autowired
+    private RestTemplate restTemplate;
 
     @Value("${website.domain-name}")
     public String domainName;
@@ -40,6 +51,10 @@ public class BaseController {
     public static final String REDIS_ALL_CATEGORY = "redis_all_category";
 
     public static final String REDIS_ARTICLE_READ_COUNTS = "redis_article_read_counts";
+
+    public static final String REDIS_ALREADY_READ = "redis_already_read";
+
+    public static final String REDIS_ARTICLE_COMMENT_COUNTS = "redis_article_comment_counts";
 
     public static final Integer REDIS_MAXAGE = 30 * 24 * 60 * 60;
 
@@ -106,6 +121,27 @@ public class BaseController {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+    }
 
+    public List<AppUserVo> getBasicUserList(Set idSet) {
+        String userServerUrlExecute
+                = "http://localhost:8003/user/queryByIds?userIds=" + JsonUtils.objectToJson(idSet);
+        ResponseEntity<GraceJSONResult> responseEntity
+                = restTemplate.getForEntity(userServerUrlExecute, GraceJSONResult.class);
+        GraceJSONResult bodyResult = responseEntity.getBody();
+        List<AppUserVo> userVOList = null;
+        if (bodyResult.getStatus() == 200) {
+            String userJson = JsonUtils.objectToJson(bodyResult.getData());
+            userVOList = JsonUtils.jsonToList(userJson, AppUserVo.class);
+        }
+        return userVOList;
+    }
+
+    public Integer getCountsFromRedis(String key) {
+        String countsStr = redisOperator.get(key);
+        if (StringUtils.isBlank(countsStr)) {
+            countsStr = "0";
+        }
+        return Integer.valueOf(countsStr);
     }
 }

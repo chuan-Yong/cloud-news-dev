@@ -2,9 +2,12 @@ package com.cloud.service.api.controller.user;
 
 import com.cloud.bo.UpdateUserInfoBo;
 import com.cloud.grace.result.GraceJSONResult;
+import com.cloud.service.config.MyServiceList;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.validation.BindingResult;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -14,6 +17,9 @@ import javax.validation.Valid;
  */
 @Api(value = "用户信息controller",tags = {"用户信息controller"})
 @RequestMapping("user")
+@FeignClient(value = MyServiceList.SERVICE_USER)
+@Service
+@Component
 public interface UserInfoControllerApi {
 
     /**
@@ -30,10 +36,9 @@ public interface UserInfoControllerApi {
      * @param userInfoBo
      * @return
      */
-    @ApiOperation(value = "修改/完善用户信息", notes = "更新用户信息接口", httpMethod = "GET")
+    @ApiOperation(value = "修改/完善用户信息", notes = "更新用户信息接口", httpMethod = "POST")
     @PostMapping("/updateUserInfo")
-    GraceJSONResult updateUserInfo(@RequestBody @Valid UpdateUserInfoBo userInfoBo,
-                                   BindingResult bindingResult);
+    GraceJSONResult updateUserInfo(@RequestBody @Valid UpdateUserInfoBo userInfoBo);
 
     /**
      * 获取用户基本信息
@@ -42,6 +47,9 @@ public interface UserInfoControllerApi {
      */
     @ApiOperation(value = "获取用户基本信息", notes = "获取用户基本信息接口", httpMethod = "POST")
     @PostMapping("/getUserInfo")
-    GraceJSONResult getUserInfo(@RequestParam String userId);
+    GraceJSONResult getByUserInfo(@RequestParam String userId);
 
+    @ApiOperation(value = "根据用户的ids查询用户列表", notes = "根据用户的ids查询用户列表", httpMethod = "GET")
+    @GetMapping("/queryByIds")
+    GraceJSONResult queryInfoByIds(@RequestParam String userIds);
 }

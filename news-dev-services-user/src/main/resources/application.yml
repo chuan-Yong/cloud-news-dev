@@ -10,7 +10,7 @@ spring:
   profiles:
     active: dev #yml中配置文件的配置环境
   application:
-    name: service-name
+    name: service-user
   datasource:                                         # 数据源的相关配置
     type: com.zaxxer.hikari.HikariDataSource          # 数据源类型：HikariCP
     driver-class-name: com.mysql.jdbc.Driver          # mysql驱动
@@ -30,3 +30,26 @@ spring:
     date-format: yyyy-MM-dd HH-mm-ss
     time-zone: GMT+8
 
+ #微服务相关
+eureka:
+  # 自定义eureka server的信息
+  server:
+    hostname: localhost
+    port: 7000
+  client:
+    # 所有的微服务都必须注册到eureka中
+    register-with-eureka: true
+    # 从注册中心获得检索服务实例
+    fetch-registry: true
+    # 注册中心的服务地址
+    service-url:
+      #defaultZone: http://${eureka.server.hostname}:${eureka.server.port}/eureka/
+      defaultZone: http://eureka-cluster-7001:7001/eureka/,http://eureka-cluster-7002:7002/eureka/,http://eureka-cluster-7003:7003/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 3      # 调整微服务（eureka client）和注册中心（eureka server）的心跳时间
+    lease-expiration-duration-in-seconds: 5   # eureka 举例最近的一次心跳等待提出的时间，默认90s
+
+######SERVER-USER开启自动以注解
+#SERVER-USER:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

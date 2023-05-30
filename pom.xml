@@ -15,6 +15,9 @@
         <module>news-dev-services-files</module>
         <module>news-dev-services-admin</module>
         <module>news-dev-services-article</module>
+        <module>news-dev-services-article-html</module>
+        <module>springcloud-eureka</module>
+        <module>springcloud-eureka-cluster</module>
     </modules>
 
     <packaging>pom</packaging>

@@ -1,0 +1,28 @@
+############################################################
+#
+# eureka服务注册中心
+#
+############################################################
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  port: 7000
+
+#配置项目信息
+spring:
+  application:
+    name: springcloud-eureka
+
+#eureka配置中心
+eureka:
+  instance:
+    hostname: localhost   #eureka实例的hostname
+  client:
+    register-with-eureka: false  #是否把当前服务也进行注册
+    fetch-registry: false  #从注册中心获得检索服务实例，
+  service-url:
+    defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+      enable-self-preservation: false   # 关闭eureka的自我保护功能
+      eviction-interval-timer-in-ms: 5000   # 清理无效节点的时间，可以缩短为5s，默认60s
+

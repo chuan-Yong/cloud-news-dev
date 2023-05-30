@@ -166,8 +166,7 @@ public class FileUploadController implements FileUploadControllerApi {
 
     private File readGridFSByFaceId(String faceId) throws Exception {
 
-        GridFSFindIterable gridFSFiles
-                = gridFSBucket.find(Filters.eq("_id", new ObjectId(faceId)));
+        GridFSFindIterable gridFSFiles = gridFSBucket.find(Filters.eq("_id", new ObjectId(faceId)));
 
         GridFSFile gridFS = gridFSFiles.first();
 

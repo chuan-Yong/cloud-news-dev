@@ -7,8 +7,10 @@ import com.cloud.enums.ArticleReviewStatus;
 import com.cloud.enums.YesOrNo;
 import com.cloud.service.BaseService;
 import com.cloud.utils.PagedGridResult;
+import com.cloud.vo.ArticleDetailVO;
 import com.github.pagehelper.PageHelper;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -71,6 +73,58 @@ public class ArticlePortalServiceImpl extends BaseService implements ArticlePort
         return articleMapper.selectByExample(articleExample);
     }
 
+    @Override
+    public PagedGridResult queryArticleListOfWriter(String writerId, Integer page, Integer pageSize) {
+        Example articleExample = new Example(Article.class);
+
+        Example.Criteria criteria = setDefualArticleExample(articleExample);
+        criteria.andEqualTo("publishUserId", writerId);
+
+        /**
+         * page: 第几页
+         * pageSize: 每页显示条数
+         */
+        PageHelper.startPage(page, pageSize);
+        List<Article> list = articleMapper.selectByExample(articleExample);
+        return setterPagedGrid(list, page);
+    }
+
+    @Override
+    public ArticleDetailVO queryDetail(String articleId) {
+
+        Article article = new Article();
+        article.setId(articleId);
+        article.setIsAppoint(YesOrNo.NO.type);
+        article.setIsDelete(YesOrNo.NO.type);
+        article.setArticleStatus(ArticleReviewStatus.SUCCESS.type);
+
+        Article result = articleMapper.selectOne(article);
+
+        ArticleDetailVO detailVO = new ArticleDetailVO();
+        BeanUtils.copyProperties(result, detailVO);
+
+        detailVO.setCover(result.getArticleCover());
+
+        return detailVO;
+    }
+
+    @Override
+    public PagedGridResult queryGoodArticleListOfWriter(String writerId) {
+        Example articleExample = new Example(Article.class);
+        articleExample.orderBy("publishTime").desc();
+
+        Example.Criteria criteria = setDefualArticleExample(articleExample);
+        criteria.andEqualTo("publishUserId", writerId);
+
+        /**
+         * page: 第几页
+         * pageSize: 每页显示条数
+         */
+        PageHelper.startPage(1, 5);
+        List<Article> list = articleMapper.selectByExample(articleExample);
+        return setterPagedGrid(list, 1);
+    }
+
     private Example.Criteria setDefualArticleExample(Example articleExample) {
         articleExample.orderBy("publishTime").desc();
         Example.Criteria criteria = articleExample.createCriteria();
@@ -87,4 +141,7 @@ public class ArticlePortalServiceImpl extends BaseService implements ArticlePort
 
         return criteria;
     }
+
+
+
 }
