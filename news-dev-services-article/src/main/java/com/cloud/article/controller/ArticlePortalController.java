@@ -122,6 +122,8 @@ public class ArticlePortalController extends BaseController implements ArticlePo
         if (bodyResult.getStatus() == 200) {
             String userJson = JsonUtils.objectToJson(bodyResult.getData());
             publisherList = JsonUtils.jsonToList(userJson, AppUserVo.class);
+        } else {
+            publisherList = new ArrayList<>();
         }
         return publisherList;
     }

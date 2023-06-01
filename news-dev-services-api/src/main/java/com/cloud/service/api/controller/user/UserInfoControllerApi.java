@@ -3,6 +3,7 @@ package com.cloud.service.api.controller.user;
 import com.cloud.bo.UpdateUserInfoBo;
 import com.cloud.grace.result.GraceJSONResult;
 import com.cloud.service.config.MyServiceList;
+import com.cloud.service.fallback.UserControllerFactoryFallback;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -17,7 +18,7 @@ import javax.validation.Valid;
  */
 @Api(value = "用户信息controller",tags = {"用户信息controller"})
 @RequestMapping("user")
-@FeignClient(value = MyServiceList.SERVICE_USER)
+@FeignClient(value = MyServiceList.SERVICE_USER,fallbackFactory = UserControllerFactoryFallback.class)
 @Service
 @Component
 public interface UserInfoControllerApi {

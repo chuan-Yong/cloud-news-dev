@@ -1,11 +1,8 @@
 package com.cloud.article;
 
 import com.cloud.article.service.ArticleService;
-import com.cloud.service.config.RabbitMQDelayConfig;
 import org.springframework.amqp.core.Message;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
@@ -15,13 +12,13 @@ import java.util.Date;
  * @Date:Create in 16:30 2023/5/26
  * @Modified by:ycy
  */
-@Component
+//@Component
 public class RabbitMQDelayConsumer {
 
     @Autowired
     private ArticleService articleService;
 
-    @RabbitListener(queues = {RabbitMQDelayConfig.QUEUE_DELAY})
+    //@RabbitListener(queues = {RabbitMQDelayConfig.QUEUE_DELAY})
     public void watchQueue(String payload, Message message) {
         System.out.println(payload);
 

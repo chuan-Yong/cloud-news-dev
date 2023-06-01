@@ -10,9 +10,12 @@ import com.cloud.user.service.UserService;
 import com.cloud.utils.JsonUtils;
 import com.cloud.vo.AppUserVo;
 import com.cloud.vo.UserAccountInfoVo;
+import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
@@ -26,10 +29,19 @@ import java.util.List;
  * @Modified by:ycy
  */
 @RestController
+@DefaultProperties(defaultFallback = "defaultFallback")
 public class UserInfoController extends BaseController implements UserInfoControllerApi {
 
     @Autowired
     private UserService userService;
+
+    @Value("${server.port}")
+    private String port;
+
+    public GraceJSONResult defaultFallback() {
+        System.out.println("全局降级");
+        return GraceJSONResult.errorCustom(ResponseStatusEnum.SYSTEM_ERROR_GLOBAL);
+    }
 
     public AppUser getUser(String userId) {
         String userJson = redisOperator.get(REDIS_USER_INFO+":" + userId);
@@ -87,14 +99,31 @@ public class UserInfoController extends BaseController implements UserInfoContro
     }
 
     @Override
+    @HystrixCommand//(fallbackMethod = "queryByIdsFallback")
     public GraceJSONResult queryInfoByIds(String userIds) {
+
+        //int  i = 1 / 0 ;
+
+        /*try {
+            Thread.sleep(7000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }*/
+
+        System.out.println("端口号--->myPort=" + port);
 
         if (StringUtils.isBlank(userIds)) {
             return GraceJSONResult.errorCustom(ResponseStatusEnum.USER_NOT_EXIST_ERROR);
         }
-
         List<AppUserVo> publisherList = new ArrayList<>();
         List<String> userIdList = JsonUtils.jsonToList(userIds, String.class);
+
+        //FIXME 仅用于dev 硬编码测试抛异常
+        /*if(userIdList.size() > 1 ) {
+            System.out.println("出异常啦-----");
+            throw new RuntimeException("------出异常啦-----");
+        }*/
+
         assert userIdList != null;
         for (String userId : userIdList) {
             // 获得用户基本信息
@@ -102,7 +131,20 @@ public class UserInfoController extends BaseController implements UserInfoContro
             // 添加到publisherList
             publisherList.add(userVO);
         }
+        return GraceJSONResult.ok(publisherList);
+    }
 
+    public GraceJSONResult queryByIdsFallback(String userIds) {
+
+        System.out.println("-----进入降级方法：queryByIdsFallback");
+
+        List<AppUserVo> publisherList = new ArrayList<>();
+        List<String> userIdList = JsonUtils.jsonToList(userIds, String.class);
+        for (String userId : userIdList) {
+            // 手动构建空对象，详情页所展示的用户信息可有可无
+            AppUserVo userVO = new AppUserVo();
+            publisherList.add(userVO);
+        }
         return GraceJSONResult.ok(publisherList);
     }
 

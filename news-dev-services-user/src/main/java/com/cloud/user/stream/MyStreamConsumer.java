@@ -1,4 +1,4 @@
-package com.cloud.article.stream;
+package com.cloud.user.stream;
 
 /**
  * @Author: ycy
@@ -19,8 +19,7 @@ import org.springframework.stereotype.Component;
 public class MyStreamConsumer {
 
     @StreamListener(MyStreamChannel.INPUT)
-    public void receiveMsg(String dumpling) {
-        System.out.println("user_info:" + dumpling);
+    public void receiveMsg(Object object) {
+        System.out.println("user_info:" + object.toString());
     }
-
 }

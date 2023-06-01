@@ -23,7 +23,7 @@ public class StreamServiceImpl implements StreamService{
     public void sendMsg() {
         AppUser user = new AppUser();
         user.setId("10101");
-        user.setNickname("imooc");
+        user.setNickname("奥利给");
 
         // 消息通过绑定器发送给mq
         myStreamChannel.output()

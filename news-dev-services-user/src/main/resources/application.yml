@@ -29,7 +29,30 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH-mm-ss
     time-zone: GMT+8
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: cloud-news
 
+  cloud:
+    stream:
+      bindings: #绑定通道和交换机
+        myOutput: #定义生产者的通道
+          #自定义交换机的名字，代理构建的消息，交给底层mq交换机
+          destination: streamExchange
+        myInput:
+          #自定义交换机的名字，消息从mq输入到消费端进行消费
+          destination: streamExchange
+          group: user
+  zipkin:
+    base-url: http://localhost:9411
+    sender:
+      type: web       #数据采集的通信方式web http
+  sleuth:
+    sampler:
+      probability: 0.8    #数据采样比例0-1
  #微服务相关
 eureka:
   # 自定义eureka server的信息
@@ -53,3 +76,17 @@ eureka:
 #SERVER-USER:
 #  ribbon:
 #    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+#配置Hystrix
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000 #设置hystrix超时时间，超过5秒自动降级
+      circuitBreaker: # 配置断路器
+        enabled: true
+        requestVolumeThreshold: 10    # 触发熔断最小请求次数，默认：20
+        sleepWindowInMilliseconds: 15000    # 熔断后过几秒后尝试半开状态（请求重试），默认：5s
+        errorThresholdPercentage: 50  # 触发熔断的失败率（异常率/阈值），默认：50

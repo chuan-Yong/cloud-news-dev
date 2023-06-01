@@ -1,0 +1,69 @@
+############################################################
+#
+# 网关zuul
+# web访问端口号  约定：7070
+#
+############################################################
+server:
+  port: 7070
+  tomcat:
+    uri-encoding: UTF-8
+
+#配置项目信息
+spring:
+  application:
+    name: springcloud-zuul-server
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 111111
+    database: 1
+  zipkin:
+    base-url: http://localhost:9411
+    sender:
+      type: web       #数据采集的通信方式web http
+  sleuth:
+    sampler:
+      probability: 0.8    #数据采样比例0-1
+#eureka配置中心
+############################################################
+#
+# eureka client 配置信息
+#
+############################################################
+eureka:
+  server:
+    hostname: eureka
+    port: 7000
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka-cluster-7001:7001/eureka/,http://eureka-cluster-7002:7002/eureka/,http://eureka-cluster-7003:7003/eureka/
+
+#路由配置
+zuul:
+  routes:
+    service-article: /service-article/**                          #配置微服务的路由id(微服务的实例id)
+#        path: /service-article/**              #请求的路径（前缀）
+#        serviceId: service-article             #请求转发的服务id
+#        url: http://192.168.191.1:8001        #请求转发到指定的微服务所在的ip地址
+  prefix: /api                                #请求前缀
+
+# ip请求限制的参数配置
+blackIp:
+  continueCounts: ${counts:10}    # ip连续请求的次数
+  timeInterval: ${interval:10}    # ip判断的事件间隔，单位：秒
+  limitTimes: ${times:15}         # 限制的时间，单位：秒
+
+
+
+
+
+
+
+
+
+
+
+

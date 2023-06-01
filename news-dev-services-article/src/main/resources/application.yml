@@ -49,11 +49,27 @@ spring:
     template-loader-path: classpath:/templates/
   rabbitmq:
     host: localhost
-    port: 15672
+    port: 5672
     username: guest
     password: guest
     virtual-host: cloud-news
-
+  cloud:
+    stream:
+      bindings:                 #绑定通道和交换机
+        myOutput:               #定义生产者的通道
+          #自定义交换机的名字，代理构建的消息，交给底层mq交换机
+          destination: streamExchange
+        myInput:
+          #自定义交换机的名字，消息从mq输入到消费端进行消费
+          destination: streamExchange
+          group: article
+  zipkin:
+    base-url: http://localhost:9411
+    sender:
+      type: web       #数据采集的通信方式web http
+  sleuth:
+    sampler:
+      probability: 0.8    #数据采样比例0-1
 ############################################################
 #
 # mybatis 配置
@@ -123,4 +139,5 @@ feign:
     config:
       service-user:
         loggerLevel: FULL
-
+  hystrix:
+    enabled: true  #打开feign客户端的内置hystrix

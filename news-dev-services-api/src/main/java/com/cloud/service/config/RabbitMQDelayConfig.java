@@ -1,17 +1,12 @@
 package com.cloud.service.config;
 
-import org.springframework.amqp.core.*;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
 /**
  * @Author: ycy
  * @Description:
  * @Date:Create in 16:31 2023/5/26
  * @Modified by:ycy
  */
-@Configuration
+//@Configuration
 public class RabbitMQDelayConfig {
     // 定义交换机的名字
     public static final String EXCHANGE_DELAY = "exchange_delay";
@@ -20,7 +15,7 @@ public class RabbitMQDelayConfig {
     public static final String QUEUE_DELAY = "queue_delay";
 
     // 创建交换机
-    @Bean(EXCHANGE_DELAY)
+    /*@Bean(EXCHANGE_DELAY)
     public Exchange exchange(){
         return ExchangeBuilder
                 .topicExchange(EXCHANGE_DELAY)
@@ -45,5 +40,5 @@ public class RabbitMQDelayConfig {
                 .to(exchange)
                 .with("publish.delay.#")
                 .noargs();      // 执行绑定
-    }
+    }*/
 }

@@ -35,7 +35,7 @@ public class RabbitMQTestController {
 
     @GetMapping("/stream")
     public Object stream() {
-//        streamService.sendMsg();
+        //streamService.sendMsg();
 
         for (int i = 0 ; i < 10 ; i ++ ) {
             streamService.eat("我吃了第" + (i+1) + "只饺子~");

@@ -18,6 +18,7 @@
         <module>news-dev-services-article-html</module>
         <module>springcloud-eureka</module>
         <module>springcloud-eureka-cluster</module>
+        <module>springcloud-zuul-server</module>
     </modules>
 
     <packaging>pom</packaging>
